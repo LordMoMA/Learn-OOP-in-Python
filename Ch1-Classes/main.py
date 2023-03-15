@@ -308,3 +308,27 @@ Assignment
 Add a constructor to our Wall class. It should take depth, height and width as parameters, and set them as properties. It should also compute an additional property called volume. Volume is the width times height times depth.
 '''
 
+class Wall:
+    def __init__(self, depth, height, width):
+        self.depth = depth
+        self.height = height
+        self.width = width
+        self.volume = depth * height * width
+    
+
+    # -- TEST SUITE, DONT TOUCH BELOW THIS LINE --
+
+
+def main():
+    wall = Wall(2, 3, 4)
+    print(wall.volume)
+    wall = Wall(3, 4, 5)
+    print(wall.volume)
+    wall = Wall(4, 5, 6)
+    print(wall.volume)
+    print(wall.height)
+    print(wall.width)
+    print(wall.depth)
+
+
+main()
