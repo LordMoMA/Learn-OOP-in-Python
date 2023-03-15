@@ -1,5 +1,6 @@
 '''
 What is object-oriented programming?
+
 Object Oriented programming, or "OOP" for short, is a way of writing code that relies on the concepts of classes and objects. The main benefit of writing your code in an object-oriented way is to structure your program into simple, reusable pieces of code.
 In this course, we'll be coding the pieces of a real-time strategy game called "Age of Dragons". Players will control armies of men, elves, orcs and dragons as they fight with one another online. If you're familiar with Age of Empires, WarCraft, or StarCraft, it will be something like that.
 
@@ -109,4 +110,73 @@ We don't want too much of our code doing the same thing. When code is duplicated
 In the first example, we would need to update two lines of code. In the second example, we only need to make the change in one place.
 
 It's not a big deal when two lines are the same and exist right next to each other. However, imagine if we had done this several hundred times in ten or twenty different code files! All of sudden, it makes a lot of sense to stop repeating yourself and write more reusable functions. We call that DRY code.
+'''
+
+####################################################################
+
+'''
+Classes
+A class is a special type of value in an object-oriented programming language like Python. Just like a string, integer or float, a class is essentially a custom type that has some special properties.
+
+An object is an instance of a class type. In this example, health is an instance of an integer type.
+
+health = 50
+In object-oriented programming, we create special types called "classes". And each instance of a class is called an "object".
+
+How do I create a class?
+In Python, you just need to use the class keyword, and you can set custom properties in the following way. It is a common convention in Python to capitalize the first character in name of your class.
+
+class Soldier:
+    health = 5
+Then to create an instance of a Soldier we simply call the class. Notice that a class isn't a function, it doesn't take input parameters directly.
+
+first_soldier = Soldier()
+print(first_soldier.health)
+# prints "5"
+Assignment
+Create a class called Wall on line 1. It should have a property called armor that is initialized to 10 and a height that starts at 5.
+'''
+
+class Wall:
+    armor = 10
+    height = 5
+
+# -- TEST SUITE, DONT TOUCH BELOW THIS LINE --
+
+
+def main():
+    wall = Wall()
+    print(wall.armor)
+    print(wall.height)
+
+
+main()
+
+#######################################################
+
+'''
+Methods
+
+After the last exercise, you might be wondering why classes are useful, they seem like dictionaries but worse!
+
+What makes classes cool is that they allow us to define custom methods on them. A method is a function that is associated with a class, and it has access to all the properties of the object.
+
+class Soldier:
+    health = 5
+
+    def take_damage(self, damage):
+        self.health -= damage
+
+soldier_one = Soldier()
+soldier_one.take_damage(2)
+print(soldier_one.health)
+# prints "3"
+The special "self" value
+As you can see, methods are nested within the class declaration. Methods always take a special parameter as their first argument called self. The self variable is a reference to the object itself, so by using it you can read and update the properties of the object.
+
+Notice that methods are called directly on an object using the dot operator.
+
+object.method()
+Assignment
+Add a fortify() method to your wall class. It should double the current armor property.
 '''
