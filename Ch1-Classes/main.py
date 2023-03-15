@@ -394,3 +394,25 @@ def fight(f1, f2):
 
 
 main()
+
+'''
+Archers
+Assignment
+Complete the Archer class.
+
+Constructor
+The constructor should take and set as properties the following parameters in order:
+
+num_arrows
+health
+name
+get_shot method
+Create a method called get_shot that doesn't take any parameters.
+
+If the current archer has health left it removes one health from the current archer. Then, if the archer's health is 0 it prints the string: {} is dead where {} is the archer's name.
+
+shoot method
+Create a method called shoot that takes a target archer as input.
+
+If the shooter has no arrows left, raise the exception {} can't shoot where {} is the archer's name. Otherwise, remove an arrow from the shooter and print {1} shoots {2} where {1} is the shooter's name and {2} is the name of the target. Next, call the target's get_shot() method.
+'''
