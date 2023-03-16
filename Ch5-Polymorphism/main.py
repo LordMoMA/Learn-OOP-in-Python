@@ -376,3 +376,52 @@ class Archer:
 When overriding methods, use the same function signature
 If you change the function signature of a parent class when overriding a method, it could be a disaster. The whole point of overriding a method is so that the caller of your code doesn't have to worry about what different things are going on inside the methods of different object types.
 '''
+
+'''
+Operator Overloading
+Another kind of built-in polymorphism in Python is the ability to override an operator in Python depending on the operands used.
+
+Arithmetic operators work for built-in types like integers and strings.
+
+print(3 + 4)
+# prints "7"
+
+print("three " + "four")
+# prints "three four"
+Custom classes on the other hand don't have any built-in support for those operators:
+
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+
+p1 = Point(4, 5)
+p2 = Point(2, 3)
+p3 = p1 + p2
+# TypeError: unsupported operand type(s) for +: 'Point' and 'Point'
+However, we can add our own support! The __add__ method is used by the Python interpreter when instances of a class are being added with the + operator.
+
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __add__(self, point):
+        x = self.x + point.x
+        y = self.y + point.y
+        return Point(x, y)
+
+p1 = Point(4, 5)
+p2 = Point(2, 3)
+p3 = p1 + p2
+# p3 is (6, 8)
+When you call p1 + p2 under the hood the interpreter just calls p1.__add__(p2).
+
+Assignment
+In Age of Dragons, players can upgrade the weaponry of their armies. If a player has two "bronze" swords, they can craft them together to create an "iron" sword. Likewise, two iron swords can be crafted together to create a "steel" sword. If a player tries to craft anything other than 2 bronze swords or 2 iron swords, a can not craft exception is raised.
+
+To make crafting simple for other developers, we'll use operator overloading on the Sword class. The + operator should craft the swords.
+
+type is a string, either bronze, iron or steel.
+'''
