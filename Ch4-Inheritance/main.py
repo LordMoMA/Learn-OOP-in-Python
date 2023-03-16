@@ -306,3 +306,22 @@ def identify(human):
 
 
 main()
+'''
+Multiple children quiz
+You'll often find in production software that it's more likely that an inheritance tree is wide than deep. In other words, instead of a deep tree like:
+
+Organism -> Animal -> Mammal -> Feline -> Cat
+You will more often see a wide tree:
+
+Dragon -> Drake
+       -> Wyvern
+       -> Hydra
+       -> Druk
+Why are inheritance trees often wide instead of deep?
+As we talked about earlier, in good software a child class is a strict subset of its parent class. In a deep tree, that means the children need to be perfect members of all the parent class "types". That simply doesn't happen very often in the real world. It's much more likely that you'll have a base class that simply has many sibling classes that are slightly different variations of the base.
+
+Vehicle -> Truck
+        -> Car
+        -> Boat
+        -> Train
+'''
