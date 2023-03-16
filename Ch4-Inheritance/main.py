@@ -399,3 +399,24 @@ def main():
 
 
 main()
+
+'''
+
+
+Dragons
+We have written a lot of classes so far, but we haven't written much code that uses the classes and calls their methods.
+
+The code in the test suite is largely the same code that you built in the last assignment. One key difference is the addition of a describe function that you'll be using.
+
+Assignment
+Let's use the Dragon class we made to have a little dragon fight. Complete the bottom half of the main() function.
+
+First, describe() each dragon in the dragon array that has been created for you
+Next, have each dragon breathe fire at all the other dragons. The center of each blast should always be at (3,3).
+Ordering matters for your solution
+Make sure to do everything in ascending index order. For example, when Blue Dragon breathes fire, it should breathe fire on the other dragons in this order:
+
+Green Dragon
+Red Dragon
+Black Dragon
+'''
