@@ -425,3 +425,82 @@ To make crafting simple for other developers, we'll use operator overloading on 
 
 type is a string, either bronze, iron or steel.
 '''
+class Sword:
+    def __init__(self, type):
+        self.type = type
+
+    def __add__(self, other):
+        if self.type == other.type:
+            if self.type == 'bronze':
+                return Sword('iron')
+            elif self.type == 'iron':
+                return Sword('steel')
+        raise Exception('Can not craft')
+
+'''
+
+creating sword1 that is bronze and sword2 that is bronze
+
+crafting sword1 and sword2 into a new sword3...
+
+sword3 is iron
+
+creating sword4 that is iron
+
+crafting sword3 and sword4 into a new sword5...
+
+sword5 is steel
+
+creating sword6 that is steel
+
+crafting sword5 and sword6 into a new sword7...
+
+Can not craft
+'''
+# -- TEST SUITE, DONT TOUCH BELOW THIS LINE --
+
+
+def main():
+    try:
+        sword1 = Sword("bronze")
+        sword2 = Sword("bronze")
+        print(f"creating sword1 that is {sword1.type} and sword2 that is {sword2.type}")
+        print("crafting sword1 and sword2 into a new sword3...")
+        sword3 = sword1 + sword2
+        print(f"sword3 is {sword3.type}")
+        sword4 = Sword("iron")
+        print(f"creating sword4 that is {sword4.type}")
+        print("crafting sword3 and sword4 into a new sword5...")
+        sword5 = sword3 + sword4
+        print(f"sword5 is {sword5.type}")
+
+        sword6 = Sword("steel")
+        print(f"creating sword6 that is {sword6.type}")
+        print("crafting sword5 and sword6 into a new sword7...")
+        sword7 = sword5 + sword6
+    except Exception as e:
+        print(e)
+
+
+main()
+
+'''
+Operator Overload Review
+As we discussed in the last assignment, operator overloading is the practice of defining custom behavior for standard Python operators. Here's a list of how the operators translate into method names.
+
+Operation	Operator	Method
+Addition	+	add
+Subtraction	-	sub
+Multiplication	*	mul
+Power	**	pow
+Division	/	truediv
+Floor Division	//	floordiv
+Remainder (modulo)	%	mod
+Bitwise Left Shift	<<	lshift
+Bitwise Right Shift	>>	rshift
+Bitwise AND	&	and
+Bitwise OR	|	or
+Bitwise XOR	^	xor
+Bitwise NOT	~	invert
+HelpReport Issue
+'''
