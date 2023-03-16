@@ -87,3 +87,15 @@ def print_position(human):
 
 
 main()
+
+'''
+Abstraction vs encapsulation quiz
+While definitions are always changing, I like to think about abstraction and encapsulation in the following way.
+
+Abstraction is a technique that helps us identify what information and behavior should be encapsulated, and what should be exposed.
+Encapsulation is the technique for organizing the code to encapsulate what should be hidden, and make visible what is intended to be visible.
+For example, using the double underscore convention to hide a __speed variable in Python is an encapsulation technique. In C++ we would use the private keyword to accomplish the same thing. Alternatively, creating a public method called move() that uses the encapsulated __speed variable would be an abstraction.
+
+If you want a longer read on the topic, check out this essay.
+https://web.archive.org/web/20210513154547/https://www.tonymarston.net/php-mysql/abstraction.txt
+'''
