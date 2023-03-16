@@ -213,3 +213,16 @@ def identify(human):
 
 
 main()
+
+'''
+Multiple children
+Assignment
+Let's extend the Hero class by adding a second child class: the Wizard. Wizard heroes are more powerful than archer heroes. They cast spells at other humans instead of shooting them, and casting does 25 damage instead of 10 but also costs 25 mana.
+
+Fulfill the following requirements.
+
+Wizard should inherit from Hero
+Wizard should set up the hero's name and health
+Set a private "mana" variable that can be passed in as a third parameter to the constructor.
+Create a cast method that takes a target human as input. If there is not enough mana left, raise a not enough mana exception. Otherwise, remove 25 mana from the wizard and deal 25 damage to the target human.
+'''
