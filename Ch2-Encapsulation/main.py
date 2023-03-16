@@ -65,3 +65,66 @@ def print_status(wizard):
 
 
 main()
+'''
+Wizard Duel
+Let's add some more features to our Wizard class and have ourselves a Wizard duel.
+
+Assignment
+Add the following methods to the Wizard class.
+
+get_fireballed
+This method takes no inputs. First, it removes 30 health from the class instance and prints {} is hit by a fireball where {} is the name of the wizard. Then, if the wizard's health is 0 or less, it prints {} is dead.
+
+drink_mana_potion
+This method takes no inputs. It prints {} drinks a mana potion where {} is the name of the wizard, then it adds 40 to the current mana value of the wizard.
+'''
+
+class Wizard:
+    def get_fireballed(self):
+        self.__health -= 30
+        print(f"{self.name} is hit by a fireball")
+        if self.__health <= 0:
+            print(f"{self.name} is dead")
+    
+    def drink_mana_potion(self):
+        print(f"{self.name} drinks a mana potion")
+        self.__mana += 40
+            
+
+    # -- TEST SUITE, DONT TOUCH BELOW THIS LINE --
+
+    def __init__(self, name):
+        self.__mana = 45
+        self.__health = 65
+        self.name = name
+
+    def get_mana(self):
+        return self.__mana
+
+    def get_health(self):
+        return self.__health
+
+
+def main():
+    merlin = Wizard("Merlin")
+    print_status(merlin)
+    merlin.drink_mana_potion()
+    print_status(merlin)
+
+    madame_mim = Wizard("Madame Mim")
+    print_status(madame_mim)
+    madame_mim.get_fireballed()
+    print_status(madame_mim)
+    madame_mim.get_fireballed()
+    print_status(madame_mim)
+    madame_mim.get_fireballed()
+    print_status(madame_mim)
+
+
+def print_status(wizard):
+    print(
+        f"{wizard.name} has {wizard.get_health()} health and {wizard.get_mana()} mana"
+    )
+
+
+main()
