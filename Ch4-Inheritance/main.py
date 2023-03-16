@@ -59,3 +59,77 @@ When a child class inherits from a parent, it inherits everything. If you only w
 
 All cats are animals but not all animals are cats
 '''  
+
+'''
+Inheritance Hierarchy
+There is no limit to how deeply we can nest an inheritance tree. For example, a Cat can inherit from an Animal that inherits from LivingThing. That said, we should always be careful that each time we inherit from a base class the child is a strict subset of the parent. You should never think to yourself "my child's class needs a couple of the parent's methods, but not these other ones" and still decide to inherit from that parent.
+
+Assignment
+The game designers have decided to add a new unit to the game: Crossbowman. A crossbowman is always an archer, but not all archers are crossbowmen. Crossbowmen have several arrows, but they have an additional method: triple_shot().
+
+Add a use_arrows(self, num) method to the Archer class. It should remove num arrows. If there aren't enough arrows to remove, it should raise a not enough arrows exception.
+The Crossbowman classes constructor should call its parent's constructor.
+The crossbowman's triple_shot method should use 3 arrows.
+The crossbowman's triple_shot method takes a target as a parameter and prints {} was shot by 3 crossbow bolts where {} is the name of the Human that was shot.
+'''
+class Human:
+    def __init__(self, name):
+        self.__name = name
+
+    def get_name(self):
+        return self.__name
+
+
+class Archer(Human):
+    def __init__(self, name, num_arrows):
+        super().__init__(name)
+        self.__num_arrows = num_arrows
+
+    def get_num_arrows(self):
+        return self.__num_arrows
+
+    def use_arrows(self, num):
+        if self.__num_arrows < num:
+            raise Exception("Not enough arrows")
+        self.__num_arrows -= num
+
+
+class Crossbowman(Archer):
+    def __init__(self, name, num_arrows):
+        super().__init__(name, num_arrows)
+
+    def triple_shot(self, target):
+        self.use_arrows(3)
+        print(f"{target} was shot by 3 crossbow bolts")
+        
+
+
+# -- TEST SUITE, DONT TOUCH BELOW THIS LINE --
+
+
+def main():
+    try:
+        print("creating an archer named Bard")
+        human2 = Archer("Bard", 1)
+        identify(human2)
+        print(f"Bard has {human2.get_num_arrows()} arrows")
+
+        print("creating a crossbowman named Sir Not-Appearing-In-This-Film")
+        human3 = Crossbowman("Sir Not-Appearing-In-This-Film", 4)
+        identify(human3)
+        print(f"{human3.get_name()} has {human3.get_num_arrows()} arrows")
+        print(f"{human3.get_name()} attempts to shoot {human2.get_name()}")
+        human3.triple_shot(human2)
+        print(f"{human3.get_name()} has {human3.get_num_arrows()} arrows")
+        print(f"{human3.get_name()} attempts to shoot {human2.get_name()}")
+        human3.triple_shot(human2)
+
+    except Exception as e:
+        print(e)
+
+
+def identify(human):
+    print(f"Getting name: {human.get_name()}")
+
+
+main()
