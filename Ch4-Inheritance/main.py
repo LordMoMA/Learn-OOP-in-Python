@@ -449,7 +449,56 @@ def main():
         for j in range(len(dragons)):
             if i != j:
                 dragons[i].breathe_fire(3, 3, [dragons[j]])
+'''
 
+Green Dragon is at 0/0
+
+Red Dragon is at 2/2
+
+Blue Dragon is at 4/3
+
+Black Dragon is at 5/-1
+
+Green Dragon breathes fire at 3/3 with range 1
+
+Red Dragon is hit by the fire
+
+Green Dragon breathes fire at 3/3 with range 1
+
+Blue Dragon is hit by the fire
+
+Green Dragon breathes fire at 3/3 with range 1
+
+Red Dragon breathes fire at 3/3 with range 2
+
+Red Dragon breathes fire at 3/3 with range 2
+
+Blue Dragon is hit by the fire
+
+Red Dragon breathes fire at 3/3 with range 2
+
+Blue Dragon breathes fire at 3/3 with range 3
+
+Green Dragon is hit by the fire
+
+Blue Dragon breathes fire at 3/3 with range 3
+
+Red Dragon is hit by the fire
+
+Blue Dragon breathes fire at 3/3 with range 3
+
+Black Dragon breathes fire at 3/3 with range 4
+
+Green Dragon is hit by the fire
+
+Black Dragon breathes fire at 3/3 with range 4
+
+Red Dragon is hit by the fire
+
+Black Dragon breathes fire at 3/3 with range 4
+
+Blue Dragon is hit by the fire
+'''
 
 # -- TEST SUITE, DONT TOUCH BELOW THIS LINE --
 
