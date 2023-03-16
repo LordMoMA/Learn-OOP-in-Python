@@ -374,6 +374,18 @@ class Dragon(Unit):
         for unit in units:
             if unit.in_area(x1, y1, x2, y2):
                 print(f"{unit.name} is hit by the fire")
+    # solution 2
+    def breathe_fire(self, x, y, units):
+        print(f"{self.name} breathes fire at {x}/{y} with range {self.__fire_range}")
+        for unit in units:
+            in_area = unit.in_area(
+                x - self.__fire_range,
+                y - self.__fire_range,
+                x + self.__fire_range,
+                y + self.__fire_range,
+            )
+            if in_area:
+                print(f"{unit.name} is hit by the fire")   
 
 
 # -- TEST SUITE, DONT TOUCH BELOW THIS LINE --
