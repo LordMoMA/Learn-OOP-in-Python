@@ -61,3 +61,57 @@ def main():
 
 
 main()
+
+'''
+Get edges
+Remember that with normal "units" we were checking if their (x/y) point was within a rectangle (the Dragon's breath) to see if they were hit by the fire. With a dragon, because they're so big, we're going to check if the dragon's body (a rectangle) is within the fire (also a rectangle still). The image below contains an example of fire breath hitting a dragon.
+
+overlap
+
+Assignment
+In the next assignment, we'll be writing the overlap method itself. First, let's set up some helper methods.
+
+Write the following methods, what they do should be self-explanatory given their names.
+
+get_left_x()
+get_right_x()
+get_top_y()
+get_bottom_y()
+Remember that x1 OR x2 could be the "left x" based on its value on the Cartesian plane. The same goes for the y values.
+'''
+
+class Rectangle:
+    def __init__(self, x1, y1, x2, y2):
+        self.x1 = x1
+        self.y1 = y1
+        self.x2 = x2
+        self.y2 = y2
+        
+    def get_left_x(self):
+        return self.x1
+        
+    def get_right_x(self):
+        return self.x2
+
+    def get_top_y(self):
+        return self.y1
+        
+    def get_bottom_y(self):
+        return self.y2
+
+
+# -- TEST SUITE, DONT TOUCH BELOW THIS LINE --
+
+
+def describe(rectangle):
+    print(
+        f"left x: {rectangle.get_left_x()}, right x: {rectangle.get_right_x()}, top y: {rectangle.get_top_y()}, bottom y: {rectangle.get_bottom_y()}"
+    )
+
+
+def main():
+    describe(Rectangle(0, 0, 4, 4))
+    describe(Rectangle(4, 4, 0, 0))
+
+
+main()
