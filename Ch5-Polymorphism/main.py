@@ -139,8 +139,13 @@ A's bottom edge is below B's top edge
 
 class Rectangle:
     def overlaps(self, rect):
-        return self.x2 >= rect.x1 and self.x1 <= rect.x2 and self.y1 <= rect.y2 and self.y2 >= rect.y1
-
+            def overlaps(self, rect):
+                return (
+                    self.get_left_x() <= rect.get_right_x()
+                    and self.get_right_x() >= rect.get_left_x()
+                    and self.get_top_y() >= rect.get_bottom_y()
+                    and self.get_bottom_y() <= rect.get_top_y()
+                )
     # -- TEST SUITE, DONT TOUCH BELOW THIS LINE --
 
     def __init__(self, x1, y1, x2, y2):
