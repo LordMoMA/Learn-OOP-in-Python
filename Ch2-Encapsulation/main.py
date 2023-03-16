@@ -196,3 +196,7 @@ def print_status(wizard):
 
 
 main()
+'''
+Encapsulation Does Not Make Systems More Secure
+As we talked about earlier, encapsulation is the practice of hiding some code complexity inside a "black box" so that other developers working with the code don't have to worry about it. Adding encapsulation to our programs through "public" and "private" members makes our code easier to work with. It makes it "cleaner". To be clear, it doesn't make the code more secure in a cryptographic or cyber-security sense. That's a point I was personally confused about when I was first learning about private and public class members.
+'''
