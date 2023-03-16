@@ -199,4 +199,10 @@ main()
 '''
 Encapsulation Does Not Make Systems More Secure
 As we talked about earlier, encapsulation is the practice of hiding some code complexity inside a "black box" so that other developers working with the code don't have to worry about it. Adding encapsulation to our programs through "public" and "private" members makes our code easier to work with. It makes it "cleaner". To be clear, it doesn't make the code more secure in a cryptographic or cyber-security sense. That's a point I was personally confused about when I was first learning about private and public class members.
+
+Encapsulation in Python
+Python is a very dynamic language, and that makes it difficult for the interpreter to enforce some of the safeguards that languages like Go does. That's why encapsulation in Python is achieved by convention rather than by force.
+
+Prefixing methods and properties with a double underscore is just a strong suggestion to the users of your class that they shouldn't be touching that stuff. If a developer wanted to break convention, there are ways to get around the double underscore rule.
+https://stackoverflow.com/questions/3385317/private-variables-and-methods-in-python
 '''
