@@ -88,15 +88,23 @@ class Rectangle:
         self.y2 = y2
         
     def get_left_x(self):
-        return self.x1
-        
+        if self.x1 < self.x2:
+            return self.x1
+        return self.x2
+
     def get_right_x(self):
+        if self.x1 > self.x2:
+            return self.x1
         return self.x2
 
     def get_top_y(self):
-        return self.y1
-        
+        if self.y1 > self.y2:
+            return self.y1
+        return self.y2
+
     def get_bottom_y(self):
+        if self.y1 < self.y2:
+            return self.y1
         return self.y2
 
 
