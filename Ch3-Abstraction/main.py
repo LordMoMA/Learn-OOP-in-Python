@@ -99,3 +99,24 @@ For example, using the double underscore convention to hide a __speed variable i
 If you want a longer read on the topic, check out this essay.
 https://web.archive.org/web/20210513154547/https://www.tonymarston.net/php-mysql/abstraction.txt
 '''
+
+'''
+Sprint
+Let's add some more abstract features to our Human class! In the game we're making, Age of Dragons, humans can sprint allowing them to move twice as fast. However, sprinting requires stamina. Each time a human sprints, it loses stamina. Once it is out of stamina, it can no longer sprint.
+
+Assignment
+Complete all of the missing methods.
+
+The __raise_if_cannot_sprint and __use_sprint_stamina are private methods that are only intended to be used within the class. In your case, you'll use them to build the other four sprinting methods.
+
+__raise_if_cannot_sprint
+This method should raise the exception: "not enough stamina to sprint" if the human is out of stamina.
+
+__use_sprint_stamina
+Remove one stamina from the human.
+
+The remaining methods
+Raise an error if there isn't enough stamina to sprint (use __raise_if_cannot_sprint()).
+Use the stamina needed to sprint (use __use_sprint_stamina())
+Move twice in the direction of the sprint.
+'''
