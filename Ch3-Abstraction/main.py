@@ -233,3 +233,16 @@ def print_position(human):
 
 
 main()
+
+'''
+How OOP developers think
+As we saw in the last exercise class variables can be private, but methods can be private as well. In other words, we can encapsulate behavior as well as data.
+
+Grouping data and behavior
+Classes in object-oriented programming are all about grouping data and behavior together in one place: an object. Object-oriented programmers tend to think about programming as a modeling problem. They think, "how can I write a Human class that simulates the data and behavior of a real human?"
+
+We aren't focusing on functional programming in this course, but to provide some contrast, functional programmers tend to think of their code as inputs and outputs. "When a human acts, what are the inputs to that action, and how do the outputs affect my program state?"
+
+Both paradigms are valuable
+While OOP isn't the only paradigm in programming, it's a tried and true one that is useful in a variety of circumstances. In any event, if you have an understanding of multiple ways of thinking about code, you'll be a much better developer overall.
+'''
