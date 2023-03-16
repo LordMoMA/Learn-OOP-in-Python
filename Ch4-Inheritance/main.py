@@ -51,3 +51,11 @@ class Archer(Human):
 
     def get_num_arrows(self):
         return self.__num_arrows
+'''
+When should I use inheritance?
+Inheritance is a powerful tool, but it is a really bad idea to try to overuse it. Inheritance should only be used when every instance of the child class can also be considered the same type as the parent class.
+
+When a child class inherits from a parent, it inherits everything. If you only want to share some functionality, inheritance probably is not the best answer. In that case, you would probably just want to share some functions, or maybe make a new parent class that both classes inherit from.
+
+All cats are animals but not all animals are cats
+'''  
