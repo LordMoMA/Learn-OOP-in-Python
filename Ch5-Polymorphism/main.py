@@ -557,3 +557,14 @@ def main():
 
 
 main()
+
+'''
+
+I am Smaug, the red dragon
+
+I am Saphira, the blue dragon
+
+I am Nefarian, the black dragon
+
+I am Toothless, the blackish dragon
+'''
