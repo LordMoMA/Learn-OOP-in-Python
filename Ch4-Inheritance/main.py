@@ -136,5 +136,80 @@ main()
 
 '''
 Inheritance hierarchy quiz
-There is no limit to how deeply we can nest an inheritance tree. For example, a Cat can inherit from an Animal which inherits from Living_Thing. That said, we should always be careful that each time we inherit from a base class that the child is a strict subset of the parent. You should never think to yourself "my child's class needs a couple of the parent's methods, but not these other ones" and still decide to inherit from that parent.
+There is no limit to how deeply we can nest an inheritance tree. 
+For example, a Cat can inherit from an Animal which inherits from Living_Thing. 
+That said, we should always be careful that each time we inherit from a base class that the child is a strict subset of the parent. You should never think to yourself "my child's class needs a couple of the parent's methods, but not these other ones" and still decide to inherit from that parent.
 '''
+
+'''
+Multiple children
+So far we've worked with linear class inheritance. In reality, inheritance structures often form trees, not lines. A class can have as many direct child classes as the programmer wants.
+
+Assignment
+The Hero class is provided for you. In this assignment you'll be writing the Archer class that inherits from Hero, and in the next assignment you'll be writing its sibling Wizard class.
+
+Fulfill the following requirements from the game designers.
+
+Archer should inherit from Hero
+Archer should setup the hero's name and health
+Set a private "number of arrows" that can be passed in as a third parameter to the constructor.
+Create a shoot method that takes a target human as input. If there are no arrows left, raise a not enough arrows exception. Otherwise, remove an arrow and deal 10 damage to the target human.
+'''
+
+class Hero:
+    def __init__(self, name, health):
+        self.__name = name
+        self.__health = health
+
+    def get_name(self):
+        return self.__name
+
+    def get_health(self):
+        return self.__health
+
+    def take_damage(self, damage):
+        self.__health -= damage
+
+
+# Create Archer class here
+class Archer(Hero):
+    def __init__(self, name, health, num_of_arrows):
+        super().__init__(name, health)
+        self.__num_of_arrows = num_of_arrows
+
+    def shoot(self, target):
+        if self.__num_of_arrows <= 0:
+            raise Exception("not enough arrows")
+        else:
+            self.__num_of_arrows -= 1
+            target.take_damage(10)
+
+
+# -- TEST SUITE, DONT TOUCH BELOW THIS LINE --
+
+
+def main():
+    try:
+        print("Creating a hero named Hercules with 200 health")
+        human1 = Hero("Hercules", 200)
+        identify(human1)
+
+        print("creating an Archer named Pericles with 100 health and 2 arrows")
+        human2 = Archer("Pericles", 100, 2)
+        identify(human2)
+
+        while human1.get_health() > 0 and human2.get_health() > 0:
+            print(f"{human2.get_name()} attempts to shoot {human1.get_name()}")
+            human2.shoot(human1)
+            identify(human1)
+            identify(human2)
+
+    except Exception as e:
+        print(e)
+
+
+def identify(human):
+    print(f"Name: {human.get_name()}, health: {human.get_health()}")
+
+
+main()
