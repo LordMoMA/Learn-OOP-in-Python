@@ -34,3 +34,34 @@ Complete the Wizard class. Its constructor should take a name as input. It shoul
 
 Create two "getter" methods. One called get_mana() and one called get_health(). They should return the current mana and health of the class instance respectively.
 '''
+class Wizard:
+    def __init__(self, name):
+        self.__mana = 45
+        self.__health = 65
+        self.name = name
+        
+    def get_mana(self):
+        return self.__mana
+    
+    def get_health(self):
+        return self.__health
+
+
+# -- TEST SUITE, DONT TOUCH BELOW THIS LINE --
+
+
+def main():
+    merlin = Wizard("Merlin")
+    madame_mim = Wizard("Madame Mim")
+
+    print_status(merlin)
+    print_status(madame_mim)
+
+
+def print_status(wizard):
+    print(
+        f"{wizard.name} has {wizard.get_health()} health and {wizard.get_mana()} mana"
+    )
+
+
+main()
