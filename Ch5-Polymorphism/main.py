@@ -330,3 +330,49 @@ def main():
 
 
 main()
+
+'''
+Polymorphism Review
+Take a look at the Greek roots of the word "polymorphism".
+
+"poly" means "many".
+"morph" means "to change" or "form".
+Polymorphism in programming is the ability to present the same interface (function or method signatures) for many different underlying forms (data types).
+
+A classic example is a Shape class that Rectangle, Circle, and Triangle can inherit from. With polymorphism, each of these classes will have different underlying data. The circle needs a center and radius. The rectangle needs two co-ordinates for the top left and bottom right corners. The triangle needs coordinates for the corners.
+
+By making each class responsible for its data and its code, you can achieve polymorphism. In this example, each class would have its own Draw() method. This allows the code that uses the different shapes to be simple and easy, and more importantly, it can treat shapes as the same even though they are different. It hides the complexities of the difference behind a clean abstraction.
+
+shapes = [Circle(5, 10), Rectangle(1, 3, 5, 6)]
+for shape in shapes:
+    print(shape.Draw())
+This is in contrast to the functional way of doing things where you would have had separate functions that have different function signatures, like draw_rectangle(x1, y1, x2, y2) and draw_circle(center, radius).
+
+Wait, what is a "function signature"?
+A function signature includes the name, inputs, and outputs of a function or method. For example, these two classes have the same method signatures.
+
+class Human:
+    def hit_by_fire(self):
+        self.health -= 5
+        return self.health
+
+class Archer:
+    def hit_by_fire(self):
+        self.health -= 10
+        return self.health
+Both methods have the same name, take 0 inputs, and return integers. If any of those things are different, they would have different function signatures.
+
+Here is an example of different signatures.
+
+class Human:
+    def hit_by_fire(self):
+        self.health -= 5
+        return self.health
+
+class Archer:
+    def hit_by_fire(self, dmg):
+        self.health -= dmg
+        return self.health
+When overriding methods, use the same function signature
+If you change the function signature of a parent class when overriding a method, it could be a disaster. The whole point of overriding a method is so that the caller of your code doesn't have to worry about what different things are going on inside the methods of different object types.
+'''
