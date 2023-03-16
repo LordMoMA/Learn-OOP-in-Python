@@ -128,3 +128,15 @@ def print_status(wizard):
 
 
 main()
+
+'''
+Wizard Duel
+Let's give our wizards the ability to launch fireballs at each other.
+
+Assignment
+Complete the cast_fireball method.
+
+Casting a fireball costs 20 mana
+If the wizard doesn't have enough mana, raise the exception {} cannot cast fireball
+Otherwise, {1} casts fireball at {2} where {1} is the caster's name and {2} is the target's name, then make sure the target is "fireballed"
+'''
